@@ -1,45 +1,161 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="=Pagina de login segura e elegante">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <meta name="keywords" content="login, acesso, segurança, conta">
-    <title>Login | Minha Plataforma</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
 
-</head>
+    <title>DN | Assine</title>
 
-<body>
-    <main class="login-container">
-        <header>
-            <h1>Bem vindo</h1>
-            <p class="subtitle">Entre com suas credenciais para acessar </p>
-        </header>
+    <!-- Bootstrap core CSS -->
+    
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:900" rel="stylesheet">
+    <link href="/lojadiariodonordeste/resources/css/flip.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/lojadiariodonordeste/resources/css/component.css" />
+    <link href="/lojadiariodonordeste/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/lojadiariodonordeste/resources/css/acessoAssinante.css?i=1" rel="stylesheet">
+    
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=OMWmVWqGfDCzr-lcrVBVVGB2Qp6s2UmnGgKaQx2cRxRQXT8hmF3uweb-rOKnVGGN15AR5Q8lAxEDbjV8k8jWPGti3HJN0MPnaFWl7gNLjcJa80drrI6JGk4OT8TxGHun" charset="UTF-8"></script><style>
+       @import "/lojadiariodonordeste/mTools/main/view/default/css/messages.css";
+       @import "/lojadiariodonordeste/resources/css/esqueciminhasenha.css?i=1";
+    </style>
 
-        <form action="/login" method="POST">
-            <div class="form-group">
-                <label for="email">Email ou Usuario</label>
-                <div class="input-group" <input type="email" id="email" name="email"
-                    placeholder="Seu email ou nome de usuario" required autofocus>
-                </div>
+    
+    <!--[IF LTE IE 9]><link rel="StyleSheet" href="/lojadiariodonordeste/resources/css/ie.css" /><![endif]-->
+    <script type="text/javascript" src="/lojadiariodonordeste/mTools/main/control/js/mtools/util/nativeutils.js"></script>
+    
+    <script src="/lojadiariodonordeste/resources/js/modernizr.custom.js"></script>
+    <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 
-            </div>
-            </div>
+	<script language="javascript" src="/lojadiariodonordeste/mTools/main/control/js/DWR.js"></script>
+    <script language="javascript" src="/lojadiariodonordeste/mTools/main/control/js/ConfigXml.js"></script>     
+    <script language="javascript" src="/lojadiariodonordeste/mTools/main/control/js/Exceptions.js"></script>
+    <script language="javascript" src="/lojadiariodonordeste/mTools/main/control/js/Messages.js"></script>
+    <script language="javascript" src="/lojadiariodonordeste/mTools/main/control/js/Ajax.js"></script>
+    <script type="text/javascript" src="/lojadiariodonordeste/mTools/main/control/js/Box.js"></script>
+    
+    <script type="text/javascript" src="/lojadiariodonordeste/dwr/interface/dwrLogin.js"></script>
+    <script type="text/javascript" src="/lojadiariodonordeste/dwr/engine.js"></script>
+    
+    <!-- Custom styles for this template -->
+    
+    <!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T49G477"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<!-- End Google Tag Manager (noscript) -->
+  </head>
 
-            <div class="form-group">
-                <label for="password">Senha</label>
-                <div class="input-group" <input type="password" id="password" name="password" placeholder="Senha"
-                    required></div>
-            </div>
-            <div class="forgot-password">
-                <a href="/recuperar-senha">Esqueceu sua senha?</a>
-            </div>
-
-        </form>
-
-    </main>
-</body>
-
+  <body id="login" onload="myFunction()" style="margin:0; font-family: 'Roboto Condensed', sans-serif;">
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-T49G477');</script>
+	<!-- End Google Tag Manager -->
+	  
+	  <div class="box" id="box">
+	       <div class="close"></div>
+	       <iframe src="about:blank" frameborder="0"></iframe>
+	  </div>
+    
+	  <div id="target"></div>
+      <div id="loader"></div>
+      <div style="display:none;" id="myDiv" class="animate-bottom">
+      		<div id="superior"><a href="/lojadiariodonordeste" title="Home">
+      			<img src="/lojadiariodonordeste/resources/images/logoDN.svg" class="mx-auto imgLogo" />
+      		</a></div>
+  	
+  			<div id="conteudo">
+			    <div class="container-fluid">
+					<div class="container">
+				        <div style="text-align: center;">
+				           <div class="divLogin">
+				               <div class="card">
+			                        <div class="divTitulo">
+										<span class="titulo">Login</span>
+									</div>
+			                        
+			                        <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
+			                        	<div class="card-body" style="text-align: left;padding-left: 50px;padding-right: 50px;">
+			                            
+			                                <div class="form-group pt-2">
+			                                    <label for="txtUser" style="display: none;">E-mail</label>
+			                                    <input type="text" class="form-input" name="txtUser" id="txtUser" required="" placeholder="E-mail">
+			                                    <div class="invalid-feedback">Oops, you missed this one.</div>
+			                                </div>
+			                                <div class="form-group pt-2">
+			                                    <label for="txtPassword" style="display: none;">Senha</label>
+			                                    <input type="password" class="form-input" name="txtPassword" id="txtPassword" required="" autocomplete="new-password" placeholder="Senha">
+			                                    <div class="invalid-feedback">Enter your password too!</div>
+			                                </div>
+			                                <div class="form-group" style="display:none">
+			                                <p class="pt-2">Perfil do assinante</p>
+			                                <select onchange="objLogin.checkComboPerfil(this)" class="form-input" id="cboPerfil" name="cboPerfil" placeholder="Perfil:">
+			                                      <option value="Assinante" selected>Assinante</option>
+			                                </select>
+			                                </div>
+			                                
+			                                <div style="padding-top: 20px;padding-bottom: 20px;">
+	                                             <span> 
+	                                         		<button onclick="return objLogin.login()" type="button" class="btn btn-lg btn-success">Acessar</button>
+	                                        	</span>
+                                         	</div>
+			                                
+			                                <div style="min-height: 45px;">
+			                                   <span id="spanMensagem" style="color: red;"></span>
+			                                </div>
+			                                
+			                                <div style="text-align: left;">
+	                                        	<p class="pt-4 text-muted" style="margin-bottom: 5px !important;"><a href="/lojadiariodonordeste/validacao-cadastro/" onclick="">Já é assinante e não tem login?</a></p>
+	                                        	<p class="text-muted" style=""><a href="/lojadiariodonordeste/esqueci-senha" onclick="">Esqueceu a senha?</a></p>
+	                                        </div>
+			                        	</div>
+			                        </form>        
+				        		</div>
+				        	</div>
+	       				</div>
+	       			</div>
+       			</div>
+       			
+       			
+    		</div>
+    		<div id="divRodape" style="display:block;">
+				© Diário do Nordeste. Todos os direitos reservados.
+		  	</div>
+	</div><!-- Animate Page -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="/lojadiariodonordeste/resources/js/popper.min.js"></script>
+    <script src="/lojadiariodonordeste/resources/js/bootstrap.min.js"></script>
+    <script src="/lojadiariodonordeste/resources/js/holder.min.js"></script>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="/lojadiariodonordeste/resources/js/jquery.js"></script> 
+    <script type="text/javascript" src="/lojadiariodonordeste/resources/js/login.js?i=1"></script> 
+    <script language="javascript" src="/lojadiariodonordeste/servlet/mconsult.mtools.ui.view.appinfo?application=lojadiariodonordeste"></script>
+    <script language="javascript" src="/lojadiariodonordeste/mTools/main/control/js/Ajax.js"></script>
+	
+    <script>
+        var myVar;
+        
+        function myFunction() {
+            myVar = setTimeout(showPage, 1000);
+        }
+        
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("myDiv").style.display = "block";
+        }
+    </script>
+    
+  </body>
 </html>
